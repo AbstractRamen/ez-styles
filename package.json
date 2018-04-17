@@ -1,0 +1,28 @@
+{
+  "name": "ez-styles.nosync",
+  "version": "1.0.0",
+  "description": "A quick morning check to make sure you can look good every day. [Try it here!](https://ezstyles.herokuapp.com/)",
+  "main": "main.js",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "sass-loader": "^7.0.1",
+    "webpack": "^3.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass --watch ./styles.scss:./bundle.css & webpack --watch"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbstractRamen/ez-stylez.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbstractRamen/ez-stylez/issues"
+  },
+  "homepage": "https://github.com/AbstractRamen/ez-stylez#readme"
+}

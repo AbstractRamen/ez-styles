@@ -1,0 +1,28 @@
+@import 'reset.scss';
+
+.title {
+  border-bottom: 1px solid black;
+  font-size: 24px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: auto;
+}
+
+.entire-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.interactive {
+  display: flex;
+  justify-content: center;
+}
+
+.left-side {
+  width: 50%;
+}
+
+.right-side {
+  width: 50%;
+}
