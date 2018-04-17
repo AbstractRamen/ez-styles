@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Ez Styles</title>
-    <link rel='stylesheet' href='styles.css' />
+    <link rel='stylesheet' href='bundle.css' />
     <script src='bundle.js'></script>
   </head>
   <body>
@@ -12,14 +12,15 @@
 
       <secton class='interactive'>
         <section class='left-side'>
-          <div class='hat'>Hat</div>
-          <div class='shirt'>Shirt</div>
-          <div class='belt'>Belt</div>
-          <div class='pants'>Pants</div>
-          <div class='shoes'>Shoes</div>
+          <div class='apparel hat'>Hat</div>
+          <div class='apparel shirt'>Shirt</div>
+          <div class='apparel belt'>Belt</div>
+          <div class='apparel pants'>Pants</div>
+          <div class='apparel shoes'>Shoes</div>
         </section>
         <section class='right-side'>
-          <select class='hat-prop'>
+          <div class='split'>
+          <select class='colors hat-prop'>
             <option value='none'>None</option>
             <option value='grey'>Grey</option>
             <option value='black'>Black</option>
@@ -31,7 +32,7 @@
             <option value='blue'>Blue</option>
             <option value='violet'>Violet</option>
           </select>
-          <select class='shirt-prop'>
+          <select class='colors shirt-prop'>
             <option value='none'>None</option>
             <option value='grey'>Grey</option>
             <option value='black'>Black</option>
@@ -43,7 +44,7 @@
             <option value='blue'>Blue</option>
             <option value='violet'>Violet</option>
           </select>
-          <select class='belt-prop'>
+          <select class='colors belt-prop'>
             <option value='none'>None</option>
             <option value='grey'>Grey</option>
             <option value='black'>Black</option>
@@ -55,7 +56,7 @@
             <option value='blue'>Blue</option>
             <option value='violet'>Violet</option>
           </select>
-          <select class='pants-prop'>
+          <select class='colors pants-prop'>
             <option value='none'>None</option>
             <option value='grey'>Grey</option>
             <option value='black'>Black</option>
@@ -67,7 +68,7 @@
             <option value='blue'>Blue</option>
             <option value='violet'>Violet</option>
           </select>
-          <select class='shoes-prop'>
+          <select class='colors shoes-prop'>
             <option value='none'>None</option>
             <option value='grey'>Grey</option>
             <option value='black'>Black</option>
@@ -79,6 +80,7 @@
             <option value='blue'>Blue</option>
             <option value='violet'>Violet</option>
           </select>
+        </div>
         </section>
       </section>
     </div>

@@ -12,11 +12,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .interactive {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+  align-items: center;
 }
 
 .left-side {
@@ -25,4 +29,19 @@
 
 .right-side {
   width: 50%;
+
+}
+
+.split {
+  flex-direction: column;
+  display: flex;
+}
+
+.apparel {
+  display: flex;
+  justify-content: center;
+}
+
+.colors {
+  width: 140px;
 }
