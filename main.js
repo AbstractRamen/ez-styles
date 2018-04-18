@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', ()=> {
+
+document.getElementsByClassName('colors hat-prop')[0].addEventListener('change', (event)=> {console.warn(event);})
+
+console.log(document.getElementsByClassName('colors hat-prop'))
+
 class Hat {
   constructor(){
     this.color = null;
@@ -48,11 +54,9 @@ const throwResponse = function(apparelCombo){
   return errors
 }
 
-// Get the modal
 var modal = document.getElementById('style-modal');
 console.log(modal);
 
-// Get the button that opens the modal
 var btn = document.getElementById("style-button");
 console.log(btn);
 
@@ -71,3 +75,5 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+})

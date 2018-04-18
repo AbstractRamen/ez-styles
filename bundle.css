@@ -49,6 +49,7 @@ table {
 .title {
   border-bottom: 1px solid black;
   font-size: 24px;
+  margin-top: 10px;
   margin-bottom: 5px;
   text-align: center;
   width: auto; }
@@ -83,6 +84,11 @@ table {
 .colors {
   width: 140px; }
 
+.intro {
+  width: 70%;
+  text-align: center;
+  margin-bottom: 10px; }
+
 .modal {
   display: none;
   position: fixed;
@@ -101,5 +107,12 @@ table {
   padding: 20px;
   border: 1px solid #888;
   width: 80%; }
+
+#style-button {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 3px;
+  font-weight: 500;
+  background-color: #DBDBDB; }
 
 /*# sourceMappingURL=bundle.css.map */
