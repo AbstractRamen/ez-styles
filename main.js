@@ -12,6 +12,9 @@ let selectedCombo = {
   watchColor: 'none',
 }
 
+let monochrome = ['black', 'white', 'grey'];
+let chromatic = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];
+
 window.selectedCombo = selectedCombo
 
 const hat = document.getElementsByClassName('colors hatColor')[0]
@@ -33,7 +36,8 @@ const changeProp = function(apparel){
   })
 }
 
-selectionArr.map(apparel => changeProp(apparel))
+selectionArr.map(apparel => {
+  changeProp(apparel)})
 
 const getApparelCombo = function(combo){
 // Grab all values and delete all "selected: null"
@@ -47,34 +51,48 @@ const getApparelCombo = function(combo){
 
 window.getApparelCombo = getApparelCombo;
 
-const ensembleBreak = function(apparel_combo){
+const ensembleBreak = function(apparelCombo){
 // Check for belt, watch, shoes. If any selected, make sure same color all
 // True means rule is broken
 
   return true
 }
 
-const tooManyNonMono = function(apparel_combo){
-  // Ensure max non-monochrome <= 2
-  // True means rule is broken
-  return true
-}
-
-const onesies = function(apparel_combo){
-  // Ensure no onesies
-  // True means rule is broken
-  const colorVals = Object.values(apparel_combo)
-  const uniqVals = []
+const colorsArr = function(apparelCombo){
+// Get unique colors
+  const colorVals = Object.values(apparelCombo)
+  const uniqColors = []
 
   colorVals.map(color => {
-    if (uniqVals.includes(color)) {
-      return true
+    if (uniqColors.includes(color)) {
+
     } else {
-      uniqVals.push(color)
+      uniqColors.push(color)
     }
   })
 
-  if (uniqVals.length === 1) {
+  return uniqColors
+}
+
+window.colorsArr = colorsArr
+
+const tooManyNonMono = function(apparelCombo){
+  // Ensure max non-monochrome <= 2
+  // True means rule is broken
+  let colorVals = Object.values(apparelCombo)
+  let count = 0;
+
+
+
+  return true
+}
+
+const onesies = function(apparelCombo){
+  // Ensure no onesies
+  // True means rule is broken
+  let uniqColors = colorsArr(apparelCombo)
+
+  if (uniqColors.length === 1) {
     return true
   }
 
