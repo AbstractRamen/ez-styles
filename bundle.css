@@ -67,6 +67,105 @@ table {
   width: 100%;
   align-items: center; }
 
+.color-class {
+  width: 25%; }
+
+.blurb-color {
+  text-decoration: underline; }
+
+.mono-colors {
+  display: flex;
+  align-items: center; }
+
+.non-mono-colors {
+  display: flex;
+  align-items: center;
+  width: 100%; }
+
+.blurb-white {
+  background-color: white;
+  width: 25%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black; }
+
+.blurb-black {
+  background-color: black;
+  color: white;
+  width: 25%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black; }
+
+.blurb-grey {
+  background-color: grey;
+  color: white;
+  width: 25%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; }
+
+.blurb-red {
+  background-color: red;
+  color: white;
+  width: 12.5%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black; }
+
+.blurb-orange {
+  background-color: orange;
+  color: white;
+  width: 12.5%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; }
+
+.blurb-yellow {
+  background-color: yellow;
+  color: black;
+  width: 12.5%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; }
+
+.blurb-green {
+  background-color: green;
+  color: white;
+  width: 12.5%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; }
+
+.blurb-blue {
+  background-color: blue;
+  color: white;
+  width: 12.5%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; }
+
+.blurb-violet {
+  background-color: violet;
+  color: white;
+  width: 12.5%;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black; }
+
 .left-side {
   width: 50%; }
 
@@ -83,6 +182,9 @@ table {
 
 .colors {
   width: 140px; }
+
+.title-h1 {
+  font-size: 18px; }
 
 .intro {
   width: 70%;
@@ -106,7 +208,8 @@ table {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; }
+  width: 60%;
+  border-radius: 4px; }
 
 #style-button {
   border: 1px solid white;
