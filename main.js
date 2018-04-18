@@ -1,20 +1,22 @@
 document.addEventListener('DOMContentLoaded', ()=> {
 
-// document.getElementsByClassName('colors hat-prop')[0].addEventListener('change', (event)=> {console.warn(event.target.value);})
+// document.getElementsByClassName('colors hat')[0].addEventListener('change', (event)=> {console.warn(event.target.value);})
 
 let selectedCombo = {
-  hat: null,
-  shirt: null,
-  belt: null,
-  pants: null,
-  shoes: null
+  hatColor: 'none',
+  shirtColor: 'none',
+  beltColor: 'none',
+  pantsColor: 'none',
+  shoesColor: 'none'
 }
 
-const hat = document.getElementsByClassName('colors hat-prop')[0]
-const shirt = document.getElementsByClassName('colors shirt-prop')[0]
-const belt = document.getElementsByClassName('colors belt-prop')[0]
-const pants = document.getElementsByClassName('colors pants-prop')[0]
-const shoes = document.getElementsByClassName('colors shoes-prop')[0]
+window.selectedCombo = selectedCombo
+
+const hat = document.getElementsByClassName('colors hatColor')[0]
+const shirt = document.getElementsByClassName('colors shirtColor')[0]
+const belt = document.getElementsByClassName('colors beltColor')[0]
+const pants = document.getElementsByClassName('colors pantsColor')[0]
+const shoes = document.getElementsByClassName('colors shoesColor')[0]
 
 const selectionArr = [hat, shirt, belt, pants, shoes]
 
@@ -23,17 +25,24 @@ const changeProp = function(apparel){
 // Also change asset color on page
   apparel.addEventListener('change',
   (event)=> {
-    console.warn(event.target.value);
-    selectedCombo.apparel = event.target.value;
-    console.log(selectedCombo);
+    selectedCombo[event.target.classList[1]] = event.target.value;
+    console.warn(selectedCombo);
   })
 }
 
 selectionArr.map(apparel => changeProp(apparel))
 
-const apparelCombo = function(){
+const apparelCombo = function(combo){
 // Grab all values and delete all "selected: null"
+  Object.keys(selectedCombo).map(apparel => {
+    if (selectedCombo[apparel] === 'none') {
+      delete selectedCombo[apparel]
+    }
+  })
+  return selectedCombo
 }
+
+window.apparelCombo = apparelCombo;
 
 const ensembleBreak = function(apparel_combo){
 // Check for belt, watch, shoes. If any selected, make sure same color all
