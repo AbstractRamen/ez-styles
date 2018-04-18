@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 let selectedCombo = {
   hatColor: 'none',
+  outerColor: 'none',
   shirtColor: 'none',
   beltColor: 'none',
   pantsColor: 'none',
-  shoesColor: 'none'
+  shoesColor: 'none',
+  watchColor: 'none',
 }
 
 window.selectedCombo = selectedCombo
@@ -17,6 +19,7 @@ const shirt = document.getElementsByClassName('colors shirtColor')[0]
 const belt = document.getElementsByClassName('colors beltColor')[0]
 const pants = document.getElementsByClassName('colors pantsColor')[0]
 const shoes = document.getElementsByClassName('colors shoesColor')[0]
+// Watch + Outer to be implemented
 
 const selectionArr = [hat, shirt, belt, pants, shoes]
 
@@ -32,7 +35,7 @@ const changeProp = function(apparel){
 
 selectionArr.map(apparel => changeProp(apparel))
 
-const apparelCombo = function(combo){
+const getApparelCombo = function(combo){
 // Grab all values and delete all "selected: null"
   Object.keys(selectedCombo).map(apparel => {
     if (selectedCombo[apparel] === 'none') {
@@ -42,11 +45,12 @@ const apparelCombo = function(combo){
   return selectedCombo
 }
 
-window.apparelCombo = apparelCombo;
+window.getApparelCombo = getApparelCombo;
 
 const ensembleBreak = function(apparel_combo){
 // Check for belt, watch, shoes. If any selected, make sure same color all
 // True means rule is broken
+
   return true
 }
 
@@ -59,8 +63,25 @@ const tooManyNonMono = function(apparel_combo){
 const onesies = function(apparel_combo){
   // Ensure no onesies
   // True means rule is broken
-  return true
+  const colorVals = Object.values(apparel_combo)
+  const uniqVals = []
+
+  colorVals.map(color => {
+    if (uniqVals.includes(color)) {
+      return true
+    } else {
+      uniqVals.push(color)
+    }
+  })
+
+  if (uniqVals.length === 1) {
+    return true
+  }
+
+  return false
 }
+
+window.onesies = onesies
 
 const throwResponse = function(apparelCombo){
   let errors = []
