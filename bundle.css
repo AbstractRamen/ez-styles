@@ -218,4 +218,10 @@ table {
   font-weight: 500;
   background-color: #DBDBDB; }
 
+.submit {
+  display: block;
+  border: none;
+  background-color: #DBDBDB;
+  justify-content: center; }
+
 /*# sourceMappingURL=bundle.css.map */
