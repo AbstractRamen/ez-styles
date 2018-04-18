@@ -1,21 +1,35 @@
 document.addEventListener('DOMContentLoaded', ()=> {
 
-document.getElementsByClassName('colors hat-prop')[0].addEventListener('change', (event)=> {console.warn(event);})
+// document.getElementsByClassName('colors hat-prop')[0].addEventListener('change', (event)=> {console.warn(event.target.value);})
 
-console.log(document.getElementsByClassName('colors hat-prop'))
-
-class Hat {
-  constructor(){
-    this.color = null;
-    this.selected = null;
-  }
-
-
+let selectedCombo = {
+  hat: null,
+  shirt: null,
+  belt: null,
+  pants: null,
+  shoes: null
 }
+
+const hat = document.getElementsByClassName('colors hat-prop')[0]
+const shirt = document.getElementsByClassName('colors shirt-prop')[0]
+const belt = document.getElementsByClassName('colors belt-prop')[0]
+const pants = document.getElementsByClassName('colors pants-prop')[0]
+const shoes = document.getElementsByClassName('colors shoes-prop')[0]
+
+const selectionArr = [hat, shirt, belt, pants, shoes]
 
 const changeProp = function(apparel){
 // Dynamically change value of class' this.color to select prop value
+// Also change asset color on page
+  apparel.addEventListener('change',
+  (event)=> {
+    console.warn(event.target.value);
+    selectedCombo.apparel = event.target.value;
+    console.log(selectedCombo);
+  })
 }
+
+selectionArr.map(apparel => changeProp(apparel))
 
 const apparelCombo = function(){
 // Grab all values and delete all "selected: null"
@@ -55,11 +69,7 @@ const throwResponse = function(apparelCombo){
 }
 
 var modal = document.getElementById('style-modal');
-console.log(modal);
-
 var btn = document.getElementById("style-button");
-console.log(btn);
-
 var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function() {
