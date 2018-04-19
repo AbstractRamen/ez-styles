@@ -173,23 +173,43 @@ checkMe.addEventListener('click', ()=> {
   console.warn(throwResponse(finalSelected))
 })
 
+// Modal for style guide
+var infoModal = document.getElementById('style-modal');
+var infoBtn = document.getElementById("style-button");
+var infoSpan = document.getElementsByClassName("close")[0];
 
-var modal = document.getElementById('style-modal');
-var btn = document.getElementById("style-button");
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-    modal.style.display = "block";
+infoBtn.onclick = function() {
+    infoModal.style.display = "block";
 }
 
-span.onclick = function() {
-    modal.style.display = "none";
+infoSpan.onclick = function() {
+    infoModal.style.display = "none";
 }
 
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == infoModal) {
+        infoModal.style.display = "none";
     }
 }
+
+// Modal for answer/style check
+var checkModal = document.getElementById('answer-modal');
+var checkBtn = document.getElementById("check-submit");
+var checkSpan = document.getElementsByClassName("close")[1];
+
+checkBtn.onclick = function() {
+    checkModal.style.display = "block";
+}
+
+checkSpan.onclick = function() {
+    checkModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == checkModal) {
+        checkModal.style.display = "none";
+    }
+}
+
 
 })
