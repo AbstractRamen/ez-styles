@@ -14,7 +14,7 @@ let selectedCombo = {
 }
 
 let monochrome = ['black', 'white', 'grey'];
-let chromatic = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];
+let chromatic = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'brown'];
 
 // window.selectedCombo = selectedCombo
 
@@ -156,15 +156,15 @@ const throwResponse = function(apparelCombo){
     if (onesies(apparelCombo)) {
       errors.push('Must have at least one different color(no onesies!)')
     }
-    // if (!Object.values(apparelCombo).includes('.shoesColor')) {
-    //   errors.push('No shoes, no socks, no service!')
-    // }
+    if (!(Object.keys(apparelCombo).includes('shoesColor'))) {
+      errors.push('No shoes, no socks, no service!')
+    }
   }
 
   if (errors.length === 0) {
-    errors.push('Congrats! You\'re a natural dresser. Looking snazzy!')
+    answerNode.innerHTML = "";
     let soleAnswer = document.createElement("li")
-    let displayAnswer = document.createTextNode('hi')
+    let displayAnswer = document.createTextNode('Congrats! You\'re a natural dresser. Looking snazzy!')
     soleAnswer.appendChild(displayAnswer)
     answerNode.appendChild(soleAnswer)
   } else {

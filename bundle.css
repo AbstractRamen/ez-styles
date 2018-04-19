@@ -176,7 +176,7 @@ table {
   justify-content: center; }
 
 .colors {
-  width: 140px; }
+  width: auto; }
 
 .title-h1 {
   font-size: 18px; }
@@ -224,33 +224,38 @@ table {
 .hat-props {
   display: flex;
   justify-content: space-between;
-  width: 400px; }
+  width: 350px;
+  align-items: center; }
 
 .shirt-props {
   display: flex;
   justify-content: space-between;
-  width: 400px; }
+  width: 350px;
+  align-items: center; }
 
 .belt-props {
   display: flex;
   justify-content: space-between;
-  width: 400px; }
+  width: 350px;
+  align-items: center; }
 
 .pants-props {
   display: flex;
   justify-content: space-between;
-  width: 400px; }
+  width: 350px;
+  align-items: center; }
 
 .shoes-props {
   display: flex;
   justify-content: space-between;
-  width: 400px; }
+  width: 350px;
+  align-items: center; }
 
 .black {
   fill: black; }
 
 .white {
-  fill: #f2f2f2; }
+  fill: #d6d6d1; }
 
 .grey {
   fill: grey; }
@@ -262,7 +267,7 @@ table {
   fill: orange; }
 
 .yellow {
-  fill: yellow; }
+  fill: #e7de5f; }
 
 .green {
   fill: green; }
@@ -272,6 +277,9 @@ table {
 
 .violet {
   fill: violet; }
+
+.brown {
+  fill: brown; }
 
 #hatColor {
   width: 80px; }
