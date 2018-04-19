@@ -186,12 +186,16 @@
 
 .answer-modal {
   align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
 }
 
 .style-guide {
   border-radius: 4px;
   font-weight: 500;
   background-color: #DBDBDB;
+  padding: 3px;
 }
 
 .submit {
@@ -324,6 +328,9 @@
   text-decoration: underline;
 }
 
-.close-answers {
+#close-answers {
   text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 3px;
 }

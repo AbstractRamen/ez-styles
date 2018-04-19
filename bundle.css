@@ -208,12 +208,16 @@ table {
   border-radius: 4px; }
 
 .answer-modal {
-  align-items: center; }
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center; }
 
 .style-guide {
   border-radius: 4px;
   font-weight: 500;
-  background-color: #DBDBDB; }
+  background-color: #DBDBDB;
+  padding: 3px; }
 
 .submit {
   padding: 3px;
@@ -317,7 +321,10 @@ table {
   font-size: 24px;
   text-decoration: underline; }
 
-.close-answers {
-  text-align: center; }
+#close-answers {
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 3px; }
 
 /*# sourceMappingURL=bundle.css.map */
