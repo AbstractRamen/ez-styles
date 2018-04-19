@@ -273,4 +273,19 @@ table {
 .violet {
   fill: violet; }
 
+#hatColor {
+  width: 80px; }
+
+#shirtColor {
+  width: 80px; }
+
+#beltColor {
+  width: 80px; }
+
+#pantsColor {
+  width: 80px; }
+
+#shoesColor {
+  width: 80px; }
+
 /*# sourceMappingURL=bundle.css.map */
