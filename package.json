@@ -10,6 +10,10 @@
     "sass-loader": "^7.0.1",
     "webpack": "^3.4.1"
   },
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "sass --watch ./styles.scss:./bundle.css & webpack --watch",
