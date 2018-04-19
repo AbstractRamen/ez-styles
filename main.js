@@ -1,6 +1,7 @@
+// import ensembleBreak from './javascript/style-rules'
+
 document.addEventListener('DOMContentLoaded', ()=> {
 
-// document.getElementsByClassName('colors hat')[0].addEventListener('change', (event)=> {console.warn(event.target.value);})
 
 let selectedCombo = {
   hatColor: 'none',
@@ -138,6 +139,7 @@ const noNudity = function(apparelCombo){
 
 const throwResponse = function(apparelCombo){
   let errors = []
+  let answerNode = document.getElementById('answer-list')
 
   if (noNudity(apparelCombo) || Object.values(apparelCombo).length === 0) {
     errors.push('Unfortunately, al naturale is not in style. Please put on clothes!')
@@ -151,27 +153,36 @@ const throwResponse = function(apparelCombo){
     if (onesies(apparelCombo)) {
       errors.push('Must have at least one different color(no onesies!)')
     }
-    if (!Object.values(apparelCombo).includes('shoesColor')) {
-      errors.push('No shoes, no socks, no service!')
-    }
+    // if (!Object.values(apparelCombo).includes('.shoesColor')) {
+    //   errors.push('No shoes, no socks, no service!')
+    // }
   }
 
   if (errors.length === 0) {
     errors.push('Congrats! You\'re a natural dresser. Looking snazzy!')
-    return errors
+    let soleAnswer = document.createElement("li")
+    let displayAnswer = document.createTextNode('hi')
+    soleAnswer.appendChild(displayAnswer)
+    answerNode.appendChild(soleAnswer)
   } else {
-    return errors
+    errors.map(errorMsg => {
+    let errorLi = document.createElement('li')
+    let displayError = document.createTextNode(errorMsg)
+    errorLi.appendChild(displayError)
+    answerNode.appendChild(errorLi)
+    })
   }
 }
 
 // window.throwResponse = throwResponse
 
-const checkMe = document.getElementById('check-submit');
-
-checkMe.addEventListener('click', ()=> {
-  let finalSelected = getApparelCombo(selectedCombo);
-  console.warn(throwResponse(finalSelected))
-})
+// const checkMe = document.getElementById('check-submit');
+//
+// checkMe.addEventListener('click', ()=> {
+//   console.log(selectedCombo);
+//   let finalSelected = getApparelCombo(selectedCombo);
+//   throwResponse(finalSelected)
+// })
 
 // Modal for style guide
 var infoModal = document.getElementById('style-modal');
@@ -190,6 +201,9 @@ window.onclick = function(event) {
     if (event.target == infoModal) {
         infoModal.style.display = "none";
     }
+    if (event.target == checkModal) {
+        checkModal.style.display = "none";
+    }
 }
 
 // Modal for answer/style check
@@ -199,17 +213,15 @@ var checkSpan = document.getElementsByClassName("close")[1];
 
 checkBtn.onclick = function() {
     checkModal.style.display = "block";
+    console.log(selectedCombo);
+    let finalSelected = getApparelCombo(selectedCombo);
+    throwResponse(finalSelected)
 }
 
 checkSpan.onclick = function() {
     checkModal.style.display = "none";
 }
 
-window.onclick = function(event) {
-    if (event.target == checkModal) {
-        checkModal.style.display = "none";
-    }
-}
 
 
 })
