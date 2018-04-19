@@ -8,8 +8,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.24.1",
     "sass-loader": "^7.0.1",
-    "webpack": "^3.4.1",
-    "harp": "*"
+    "webpack": "^3.4.1"
   },
   "engines": {
     "node": "4.1.1",
@@ -18,8 +17,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "sass --watch ./styles.scss:./bundle.css & webpack --watch",
-    "postinstall": "webpack",
-    "harps": "harp server --port $PORT"
+    "postinstall": "webpack"
   },
   "devDependencies": {},
   "repository": {
