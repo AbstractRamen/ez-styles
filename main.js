@@ -32,7 +32,10 @@ const changeProp = function(apparel){
 // Also change asset color on page
   apparel.addEventListener('change',
   (event)=> {
-    selectedCombo[event.target.classList[1]] = event.target.value;
+    let selectedColor = event.target.value
+    selectedCombo[event.target.classList[1]] = selectedColor
+    let visualAsset = document.getElementById(event.target.classList[1])
+    visualAsset.classList = selectedColor
   })
 }
 
@@ -165,6 +168,7 @@ const throwResponse = function(apparelCombo){
     soleAnswer.appendChild(displayAnswer)
     answerNode.appendChild(soleAnswer)
   } else {
+    answerNode.innerHTML = "";
     errors.map(errorMsg => {
     let errorLi = document.createElement('li')
     let displayError = document.createTextNode(errorMsg)
@@ -175,14 +179,6 @@ const throwResponse = function(apparelCombo){
 }
 
 // window.throwResponse = throwResponse
-
-// const checkMe = document.getElementById('check-submit');
-//
-// checkMe.addEventListener('click', ()=> {
-//   console.log(selectedCombo);
-//   let finalSelected = getApparelCombo(selectedCombo);
-//   throwResponse(finalSelected)
-// })
 
 // Modal for style guide
 var infoModal = document.getElementById('style-modal');
