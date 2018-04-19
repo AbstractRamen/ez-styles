@@ -151,6 +151,9 @@ const throwResponse = function(apparelCombo){
     if (onesies(apparelCombo)) {
       errors.push('Must have at least one different color(no onesies!)')
     }
+    if (!Object.values(apparelCombo).includes('shoesColor')) {
+      errors.push('No shoes, no socks, no service!')
+    }
   }
 
   if (errors.length === 0) {

@@ -20,7 +20,8 @@
   display: flex;
   justify-content: space-around;
   height: auto;
-  width: 100%;
+  width: 80%;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -136,15 +137,6 @@
   border-right: 1px solid black;
 }
 
-.left-side {
-  width: 50%;
-}
-
-.right-side {
-  width: 50%;
-
-}
-
 .split {
   flex-direction: column;
   display: flex;
@@ -191,7 +183,14 @@
   border-radius: 4px;
 }
 
+.style-guide {
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: #DBDBDB;
+}
+
 .submit {
+  padding: 3px;
   display: block;
   border: none;
   background-color: #DBDBDB;
@@ -200,5 +199,36 @@
 
 .submit-button {
   font-weight: 400;
+}
 
+// Interactive asset splits horizontal
+
+.hat-props {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.shirt-props {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.belt-props {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.pants-props {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.shoes-props {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
 }
