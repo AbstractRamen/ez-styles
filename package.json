@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sass --watch ./styles.scss:./bundle.css & webpack --watch"
+    "start": "sass --watch ./styles.scss:./bundle.css & webpack --watch",
+    "postinstall": "webpack"
   },
   "devDependencies": {},
   "repository": {

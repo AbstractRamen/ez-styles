@@ -19,13 +19,14 @@ let chromatic = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'brown'];
 // window.selectedCombo = selectedCombo
 
 const hat = document.getElementsByClassName('colors hatColor')[0]
+const outer = document.getElementsByClassName('colors outerColor')[0]
 const shirt = document.getElementsByClassName('colors shirtColor')[0]
 const belt = document.getElementsByClassName('colors beltColor')[0]
 const pants = document.getElementsByClassName('colors pantsColor')[0]
 const shoes = document.getElementsByClassName('colors shoesColor')[0]
 // Watch + Outer to be implemented
 
-const selectionArr = [hat, shirt, belt, pants, shoes]
+const selectionArr = [hat, outer, shirt, belt, pants, shoes]
 
 const changeProp = function(apparel){
 // Dynamically change value of class' this.color to select prop value
@@ -145,13 +146,13 @@ const throwResponse = function(apparelCombo){
   let answerNode = document.getElementById('answer-list')
 
   if (noNudity(apparelCombo) || Object.values(apparelCombo).length === 0) {
-    errors.push('Unfortunately, al naturale is not in style. Please put on clothes!')
+    errors.push('Unfortunately, al naturale is not in style. Please put on clothes (both pants and shirt)!')
   } else {
     if (ensembleBreak(apparelCombo)) {
       errors.push('Ensemble Pieces(hat, belt, shoes, watch) must be the same color')
     }
     if (tooManyNonMono(apparelCombo)) {
-      errors.push('Too many non-monochromatic colors')
+      errors.push('Too many chromatic colors. Try replacing one of them with a monochromatic one.')
     }
     if (onesies(apparelCombo)) {
       errors.push('Must have at least one different color(no onesies!)')
@@ -205,7 +206,7 @@ window.onclick = function(event) {
 // Modal for answer/style check
 var checkModal = document.getElementById('answer-modal');
 var checkBtn = document.getElementById("check-submit");
-var checkSpan = document.getElementsByClassName("close")[1];
+var checkSpan = document.getElementById("close-answers");
 
 checkBtn.onclick = function() {
     checkModal.style.display = "block";

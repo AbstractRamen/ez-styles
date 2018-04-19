@@ -201,10 +201,14 @@ table {
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
+  margin-top: 25%;
   padding: 20px;
   border: 1px solid #888;
   width: 60%;
   border-radius: 4px; }
+
+.answer-modal {
+  align-items: center; }
 
 .style-guide {
   border-radius: 4px;
@@ -222,6 +226,12 @@ table {
   font-weight: 400; }
 
 .hat-props {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  align-items: center; }
+
+.outer-props {
   display: flex;
   justify-content: space-between;
   width: 350px;
@@ -284,6 +294,9 @@ table {
 #hatColor {
   width: 80px; }
 
+#outerColor {
+  width: 80px; }
+
 #shirtColor {
   width: 80px; }
 
@@ -295,5 +308,16 @@ table {
 
 #shoesColor {
   width: 80px; }
+
+#answer-list {
+  text-align: center; }
+
+.title-h2 {
+  text-align: center;
+  font-size: 24px;
+  text-decoration: underline; }
+
+.close-answers {
+  text-align: center; }
 
 /*# sourceMappingURL=bundle.css.map */
