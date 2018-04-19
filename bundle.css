@@ -211,17 +211,13 @@ table {
   width: 60%;
   border-radius: 4px; }
 
-#style-button {
-  border: 1px solid white;
-  border-radius: 4px;
-  padding: 3px;
-  font-weight: 500;
-  background-color: #DBDBDB; }
-
 .submit {
   display: block;
   border: none;
   background-color: #DBDBDB;
   justify-content: center; }
+
+.submit-button {
+  font-weight: 400; }
 
 /*# sourceMappingURL=bundle.css.map */
