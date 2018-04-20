@@ -30,9 +30,10 @@ const shirt = document.getElementsByClassName('colors shirtColor')[0]
 const belt = document.getElementsByClassName('colors beltColor')[0]
 const pants = document.getElementsByClassName('colors pantsColor')[0]
 const shoes = document.getElementsByClassName('colors shoesColor')[0]
+const watch = document.getElementsByClassName('colors watchColor')[0]
 // Watch + Outer to be implemented
 
-const selectionArr = [hat, outer, shirt, belt, pants, shoes]
+const selectionArr = [hat, outer, shirt, belt, pants, shoes, watch]
 
 const changeProp = function(apparel){
 // Dynamically change value of class' this.color to select prop value

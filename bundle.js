@@ -91,9 +91,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var belt = document.getElementsByClassName('colors beltColor')[0];
   var pants = document.getElementsByClassName('colors pantsColor')[0];
   var shoes = document.getElementsByClassName('colors shoesColor')[0];
+  var watch = document.getElementsByClassName('colors watchColor')[0];
   // Watch + Outer to be implemented
 
-  var selectionArr = [hat, outer, shirt, belt, pants, shoes];
+  var selectionArr = [hat, outer, shirt, belt, pants, shoes, watch];
 
   var changeProp = function changeProp(apparel) {
     // Dynamically change value of class' this.color to select prop value

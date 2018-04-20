@@ -47,14 +47,15 @@ table {
   border-spacing: 0; }
 
 .title {
-  border-bottom: 3px double #DBDBDB;
-  font-size: 24px;
+  border-bottom: 4px double #DBDBDB;
+  font-size: 28px;
   padding-top: 10px;
   margin-bottom: 5px;
   text-align: center;
   width: 100%;
+  font-weight: 700;
   padding-bottom: 12px;
-  background-color: lightgrey; }
+  background-color: #F5F5F5; }
 
 .entire-page {
   display: flex;
@@ -186,7 +187,13 @@ table {
 .intro {
   width: 70%;
   text-align: center;
-  margin-bottom: 10px; }
+  margin-bottom: 40px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px; }
+
+.intro-blurb {
+  font-size: 18px; }
 
 .modal {
   display: none;
@@ -238,38 +245,39 @@ table {
   display: flex;
   justify-content: space-between;
   max-width: 350px;
-  width: 60%;
   align-items: center; }
 
 .outer-props {
   display: flex;
   justify-content: space-between;
   max-width: 350px;
-  width: 60%;
   align-items: center; }
 
 .shirt-props {
   display: flex;
   justify-content: space-between;
   max-width: 350px;
-  width: 60%;
   align-items: center; }
 
 .belt-props {
   display: flex;
   justify-content: space-between;
   max-width: 350px;
-  width: 60%;
   align-items: center; }
 
 .pants-props {
   display: flex;
   justify-content: space-between;
   max-width: 350px;
-  width: 60%;
   align-items: center; }
 
 .shoes-props {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  align-items: center; }
+
+.watch-props {
   display: flex;
   justify-content: space-between;
   width: 350px;
@@ -323,6 +331,9 @@ table {
 #shoesColor {
   width: 30%; }
 
+#watchColor {
+  width: 30%; }
+
 #answer-list {
   text-align: center; }
 
@@ -340,5 +351,8 @@ table {
 
 #close-answers:hover {
   cursor: pointer; }
+
+.credits {
+  margin-top: 40px; }
 
 /*# sourceMappingURL=bundle.css.map */
