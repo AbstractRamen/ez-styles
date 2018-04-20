@@ -70,7 +70,7 @@
 "use strict";
 
 
-// import ensembleBreak from './javascript/style-rules'
+var _styleRules = __webpack_require__(1);
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -82,14 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
     pantsColor: 'none',
     shoesColor: 'none',
     watchColor: 'none'
-  };
 
-  var monochrome = ['black', 'white', 'grey'];
-  var chromatic = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'brown'];
+    // window.selectedCombo = selectedCombo
 
-  // window.selectedCombo = selectedCombo
-
-  var hat = document.getElementsByClassName('colors hatColor')[0];
+  };var hat = document.getElementsByClassName('colors hatColor')[0];
   var outer = document.getElementsByClassName('colors outerColor')[0];
   var shirt = document.getElementsByClassName('colors shirtColor')[0];
   var belt = document.getElementsByClassName('colors beltColor')[0];
@@ -126,104 +122,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // window.getApparelCombo = getApparelCombo;
 
-  var ensembleBreak = function ensembleBreak(apparelCombo) {
-    // Check for belt, watch, shoes. If any selected, make sure same color all
-    // True means rule is broken
-
-    var ensembleColors = [];
-    var comboArr = Object.keys(apparelCombo);
-
-    comboArr.map(function (item) {
-      if (item === 'beltColor' || item === 'hatColor' || item === 'shoesColor' || item === 'watchColor') {
-        if (apparelCombo[item] !== 'none' && !ensembleColors.includes(apparelCombo[item])) {
-          ensembleColors.push(apparelCombo[item]);
-        }
-      }
-    });
-
-    if (ensembleColors.length > 1) {
-      return true;
-    }
-    return false;
-  };
-
   // window.ensembleBreak = ensembleBreak
-
-  var colorsArr = function colorsArr(apparelCombo) {
-    // Get unique colors
-    var colorVals = Object.values(apparelCombo);
-    var uniqColors = [];
-
-    colorVals.map(function (color) {
-      if (uniqColors.includes(color)) {} else {
-        uniqColors.push(color);
-      }
-    });
-
-    return uniqColors;
-  };
 
   // window.colorsArr = colorsArr
 
-  var tooManyNonMono = function tooManyNonMono(apparelCombo) {
-    // Ensure max non-monochrome <= 2
-    // True means rule is broken
-    var colorVals = Object.values(apparelCombo);
-    var count = 0;
-    var dummyArr = [];
-
-    colorVals.map(function (color) {
-      if (chromatic.includes(color)) {
-        count++;
-      }
-    });
-
-    if (count > 2) {
-      return true;
-    }
-
-    return false;
-  };
-
   // window.tooManyNonMono = tooManyNonMono
 
-  var onesies = function onesies(apparelCombo) {
-    // Ensure no onesies
-    // True means rule is broken
-    var uniqColors = colorsArr(apparelCombo);
-
-    if (uniqColors.length === 1) {
-      return true;
-    }
-
-    return false;
-  };
-
   // window.onesies = onesies
-
-  var noNudity = function noNudity(apparelCombo) {
-
-    var wornObjects = Object.keys(apparelCombo);
-    if (!wornObjects.includes('shirtColor') || !wornObjects.includes('pantsColor')) {
-      return true;
-    }
-    return false;
-  };
 
   var throwResponse = function throwResponse(apparelCombo) {
     var errors = [];
     var answerNode = document.getElementById('answer-list');
 
-    if (noNudity(apparelCombo) || Object.values(apparelCombo).length === 0) {
+    if ((0, _styleRules.noNudity)(apparelCombo) || Object.values(apparelCombo).length === 0) {
       errors.push('Unfortunately, al naturale is not in style. Please put on clothes (both pants and shirt)!');
     } else {
-      if (ensembleBreak(apparelCombo)) {
+      if ((0, _styleRules.ensembleBreak)(apparelCombo)) {
         errors.push('Ensemble Pieces(hat, belt, shoes, watch) must be the same color');
       }
-      if (tooManyNonMono(apparelCombo)) {
+      if ((0, _styleRules.tooManyNonMono)(apparelCombo)) {
         errors.push('Too many chromatic colors. Try replacing one of them with a monochromatic one.');
       }
-      if (onesies(apparelCombo)) {
+      if ((0, _styleRules.onesies)(apparelCombo)) {
         errors.push('Must have at least one different color(no onesies!)');
       }
       if (!Object.keys(apparelCombo).includes('shoesColor')) {
@@ -241,9 +161,11 @@ document.addEventListener('DOMContentLoaded', function () {
       answerNode.innerHTML = "";
       errors.map(function (errorMsg) {
         var errorLi = document.createElement('li');
+        var emptyBr = document.createElement('br');
         var displayError = document.createTextNode(errorMsg);
         errorLi.appendChild(displayError);
         answerNode.appendChild(errorLi);
+        answerNode.appendChild(emptyBr);
       });
     }
   };
@@ -279,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   checkBtn.onclick = function () {
     checkModal.style.display = "block";
-    console.log(selectedCombo);
     var finalSelected = getApparelCombo(selectedCombo);
     throwResponse(finalSelected);
   };
@@ -288,6 +209,95 @@ document.addEventListener('DOMContentLoaded', function () {
     checkModal.style.display = "none";
   };
 });
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var monochrome = exports.monochrome = ['black', 'white', 'grey'];
+var chromatic = exports.chromatic = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'brown'];
+
+var ensembleBreak = exports.ensembleBreak = function ensembleBreak(apparelCombo) {
+  // Check for belt, watch, shoes. If any selected, make sure same color all
+  // True means rule is broken
+
+  var ensembleColors = [];
+  var comboArr = Object.keys(apparelCombo);
+
+  comboArr.map(function (item) {
+    if (item === 'beltColor' || item === 'hatColor' || item === 'shoesColor' || item === 'watchColor') {
+      if (apparelCombo[item] !== 'none' && !ensembleColors.includes(apparelCombo[item])) {
+        ensembleColors.push(apparelCombo[item]);
+      }
+    }
+  });
+
+  if (ensembleColors.length > 1) {
+    return true;
+  }
+  return false;
+};
+
+var tooManyNonMono = exports.tooManyNonMono = function tooManyNonMono(apparelCombo) {
+  // Ensure max non-monochrome <= 2
+  // True means rule is broken
+  var colorVals = Object.values(apparelCombo);
+  var count = 0;
+  var dummyArr = [];
+
+  colorVals.map(function (color) {
+    if (chromatic.includes(color)) {
+      count++;
+    }
+  });
+
+  if (count > 2) {
+    return true;
+  }
+
+  return false;
+};
+
+var onesies = exports.onesies = function onesies(apparelCombo) {
+  // Ensure no onesies
+  // True means rule is broken
+  var uniqColors = colorsArr(apparelCombo);
+
+  if (uniqColors.length === 1) {
+    return true;
+  }
+
+  return false;
+};
+
+var colorsArr = exports.colorsArr = function colorsArr(apparelCombo) {
+  // Get unique colors
+  var colorVals = Object.values(apparelCombo);
+  var uniqColors = [];
+
+  colorVals.map(function (color) {
+    if (uniqColors.includes(color)) {} else {
+      uniqColors.push(color);
+    }
+  });
+
+  return uniqColors;
+};
+
+var noNudity = exports.noNudity = function noNudity(apparelCombo) {
+
+  var wornObjects = Object.keys(apparelCombo);
+  if (!wornObjects.includes('shirtColor') || !wornObjects.includes('pantsColor')) {
+    return true;
+  }
+  return false;
+};
 
 /***/ })
 /******/ ]);

@@ -1,4 +1,12 @@
-// import ensembleBreak from './javascript/style-rules'
+import {
+  ensembleBreak,
+  tooManyNonMono,
+  onesies,
+  monochrome,
+  chromatic,
+  colorsArr,
+  noNudity
+} from './javascript/style-rules'
 
 document.addEventListener('DOMContentLoaded', ()=> {
 
@@ -13,8 +21,6 @@ let selectedCombo = {
   watchColor: 'none',
 }
 
-let monochrome = ['black', 'white', 'grey'];
-let chromatic = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'brown'];
 
 // window.selectedCombo = selectedCombo
 
@@ -55,91 +61,13 @@ const getApparelCombo = function(combo){
 
 // window.getApparelCombo = getApparelCombo;
 
-const ensembleBreak = function(apparelCombo){
-// Check for belt, watch, shoes. If any selected, make sure same color all
-// True means rule is broken
-
-  let ensembleColors = []
-  let comboArr = Object.keys(apparelCombo)
-
-  comboArr.map(item => {
-    if (item === 'beltColor' || item === 'hatColor' || item === 'shoesColor' || item === 'watchColor') {
-      if (apparelCombo[item] !== 'none' && !ensembleColors.includes(apparelCombo[item])) {
-        ensembleColors.push(apparelCombo[item])
-      }
-    }
-  })
-
-  if (ensembleColors.length > 1) {
-    return true
-  }
-  return false
-}
-
 // window.ensembleBreak = ensembleBreak
-
-const colorsArr = function(apparelCombo){
-// Get unique colors
-  const colorVals = Object.values(apparelCombo)
-  const uniqColors = []
-
-  colorVals.map(color => {
-    if (uniqColors.includes(color)) {
-
-    } else {
-      uniqColors.push(color)
-    }
-  })
-
-  return uniqColors
-}
 
 // window.colorsArr = colorsArr
 
-const tooManyNonMono = function(apparelCombo){
-  // Ensure max non-monochrome <= 2
-  // True means rule is broken
-  let colorVals = Object.values(apparelCombo)
-  let count = 0;
-  let dummyArr = []
-
-  colorVals.map(color => {
-    if (chromatic.includes(color)) {
-      count++
-    }
-  })
-
-  if (count > 2) {
-    return true
-  }
-
-  return false
-}
-
 // window.tooManyNonMono = tooManyNonMono
 
-const onesies = function(apparelCombo){
-  // Ensure no onesies
-  // True means rule is broken
-  let uniqColors = colorsArr(apparelCombo)
-
-  if (uniqColors.length === 1) {
-    return true
-  }
-
-  return false
-}
-
 // window.onesies = onesies
-
-const noNudity = function(apparelCombo){
-
-  const wornObjects = Object.keys(apparelCombo)
-  if (!wornObjects.includes('shirtColor') || !wornObjects.includes('pantsColor')) {
-    return true
-  }
-  return false
-}
 
 const throwResponse = function(apparelCombo){
   let errors = []
@@ -172,9 +100,11 @@ const throwResponse = function(apparelCombo){
     answerNode.innerHTML = "";
     errors.map(errorMsg => {
     let errorLi = document.createElement('li')
+    let emptyBr = document.createElement('br')
     let displayError = document.createTextNode(errorMsg)
     errorLi.appendChild(displayError)
     answerNode.appendChild(errorLi)
+    answerNode.appendChild(emptyBr)
     })
   }
 }
@@ -210,7 +140,6 @@ var checkSpan = document.getElementById("close-answers");
 
 checkBtn.onclick = function() {
     checkModal.style.display = "block";
-    console.log(selectedCombo);
     let finalSelected = getApparelCombo(selectedCombo);
     throwResponse(finalSelected)
 }

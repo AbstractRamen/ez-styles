@@ -1,12 +1,14 @@
 @import 'reset.scss';
 
 .title {
-  border-bottom: 1px solid black;
+  border-bottom: 3px double #DBDBDB;
   font-size: 24px;
-  margin-top: 10px;
+  padding-top: 10px;
   margin-bottom: 5px;
   text-align: center;
-  width: auto;
+  width: 100%;
+  padding-bottom: 12px;
+  background-color: lightgrey;
 }
 
 .entire-page {
@@ -194,15 +196,19 @@
 .style-guide {
   border-radius: 4px;
   font-weight: 500;
-  background-color: #DBDBDB;
-  padding: 3px;
+  background-color: #008489;
+  padding: 5px;
+  color: white;
+}
+
+.style-guide:hover {
+  cursor: pointer;
 }
 
 .submit {
   padding: 3px;
   display: block;
   border: none;
-  background-color: #DBDBDB;
   justify-content: center;
 }
 
@@ -215,35 +221,40 @@
 .hat-props {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  max-width: 350px;
+  width: 60%;
   align-items: center;
 }
 
 .outer-props {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  max-width: 350px;
+  width: 60%;
   align-items: center;
 }
 
 .shirt-props {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  max-width: 350px;
+  width: 60%;
   align-items: center;
 }
 
 .belt-props {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  max-width: 350px;
+  width: 60%;
   align-items: center;
 }
 
 .pants-props {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  max-width: 350px;
+  width: 60%;
   align-items: center;
 }
 
@@ -295,27 +306,27 @@
 }
 
 #hatColor {
-  width: 80px;
+  width: 30%;
 }
 
 #outerColor {
-  width: 80px;
+  width: 30%;
 }
 
 #shirtColor {
-  width: 80px;
+  width: 30%;
 }
 
 #beltColor {
-  width: 80px;
+  width: 30%;
 }
 
 #pantsColor {
-  width: 80px;
+  width: 30%;
 }
 
 #shoesColor {
-  width: 80px;
+  width: 30%;
 }
 
 #answer-list {
@@ -330,7 +341,12 @@
 
 #close-answers {
   text-align: center;
-  border: 1px solid black;
   padding: 5px;
   border-radius: 3px;
+  background-color: #008489;
+  color: white;
+}
+
+#close-answers:hover {
+  cursor: pointer;
 }
