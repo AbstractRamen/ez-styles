@@ -7,12 +7,13 @@ A quick morning check to make sure you can look good every day.
 ## MVP Features
 
 - Visual UX for user to represent what they have
-- Algorithm based on specific set of matching rules (link incoming)
-    - Monochrome colors [Black, Grey, White]
-    - Non-monochromatic colors = [Red, Orange, Yellow, Green, Blue, Violet]
-    - Sets may only have 2 non-monochromatics, repeated colors have separate counts
-    - No onesie (monochromatic or not)
-- Hat, shirt, pants, shoes, watch, belt
+  - Dynamic color changing for assets depending on value chosen
+  ![File Attachment](https://media.giphy.com/media/5UGVI6lcxMKIYn1vIj/giphy.gif)
+- Algorithm based on specific set of matching rules [(source here)](https://clubd.co.jp/wp/post-107038)
+- Return critique/recommendations to users if any rules are broken
+- Account for 7 basic components but must be easily extensible: Hat, Outerwear, Shirt, pants, shoes, watch, belt
+  - Can add additional assets in a DRY manner
+
 
 Bonuses:
 

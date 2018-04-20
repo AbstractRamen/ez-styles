@@ -3,12 +3,12 @@
 .title {
   border-bottom: 4px double #DBDBDB;
   font-size: 28px;
-  padding-top: 10px;
+  padding-top: 16px;
   margin-bottom: 5px;
   text-align: center;
   width: 100%;
   font-weight: 700;
-  padding-bottom: 12px;
+  padding-bottom: 16px;
   background-color: #F5F5F5;
 }
 
@@ -264,14 +264,14 @@
 .shoes-props {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  max-width: 350px;
   align-items: center;
 }
 
 .watch-props {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  max-width: 350px;
   align-items: center;
 }
 
